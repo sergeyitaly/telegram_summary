@@ -1,0 +1,35 @@
+macOS 64-bit universal2 installer from https://www.python.org/ftp/python/3.14.0/python-3.14.0rc3-macos11.pkg
+
+
+mkdir -p ~/.pyenv/versions/3.14.0rc3/bin
+
+ln -s /usr/local/bin/python3.14 ~/.pyenv/versions/3.14.0rc3/bin/python
+ln -s /usr/local/bin/pip3.14 ~/.pyenv/versions/3.14.0rc3/bin/pip
+
+pyenv local 3.14.0rc3
+
+
+export PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
+pip install pydantic-core
+or 
+pip install --only-binary=all pydantic-core pydantic
+
+pip install -r requirements.txt --no-deps
+
+Go to https://my.telegram.org/apps
+
+Log in with your phone number
+
+Create an application
+
+Copy the API ID and API Hash
+
+Update your .env file with these values
+
+Potential Performance Benefits:
+Parallel API calls - Make multiple OpenAI API requests simultaneously
+
+Reduced I/O wait time - While one request is waiting for response, others can be processed
+
+Better CPU utilization - While waiting for network I/O, other threads can handle processing
+
